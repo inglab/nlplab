@@ -41,11 +41,11 @@ columns = [symbol_P, symbol_Q, conjunction,
            disjunction, implication, equivalence]           
 result_frame = pd.DataFrame(results, columns=columns)
 
-print 'P:', proposition_P
-print 'Q:', propositon_Q
-print
-print 'Expression Outcomes:-'
-print result_frame   
+print ('P:', proposition_P)
+print ('Q:', propositon_Q)
+print ()
+print ('Expression Outcomes:-')
+print (result_frame   )  
 
 
 
@@ -109,20 +109,21 @@ print val
 dom = {'r', 'f', 'g', 'a'}
 m = nltk.Model(dom, val)
 
-print m.evaluate('jumps_over(felix, rover) & dog(rover) & runs(rover)', None)
-print m.evaluate('jumps_over(felix, rover) & dog(rover) & -runs(rover)', None)
-print m.evaluate('jumps_over(alex, garfield) & dog(alex) & cat(garfield) & sleeps(garfield)', None)
+
+print (m.evaluate('jumps_over(felix, rover) & dog(rover) & runs(rover)', None))
+print (m.evaluate('jumps_over(felix, rover) & dog(rover) & -runs(rover)', None))
+print (m.evaluate('jumps_over(alex, garfield) & dog(alex) & cat(garfield) & sleeps(garfield)', None))
 
 
 g = nltk.Assignment(dom, [('x', 'r'), ('y', 'f')])   
-print m.evaluate('runs(y) & jumps_over(y, x) & sleeps(x)', g)   
-print m.evaluate('exists y. (fox(y) & runs(y))', g)     
+print (m.evaluate('runs(y) & jumps_over(y, x) & sleeps(x)', g) )  
+print (m.evaluate('exists y. (fox(y) & runs(y))', g)  )   
 
 
 formula = read_expr('runs(x)')
-print m.satisfiers(formula, 'x', g)  
+print (m.satisfiers(formula, 'x', g)  )
 
 formula = read_expr('runs(x) & fox(x)')
-print m.satisfiers(formula, 'x', g)              
+print (m.satisfiers(formula, 'x', g))              
              
              
